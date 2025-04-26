@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 36.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 36.5: ¡Mi Propio Camino Secreto!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks por cada pareja (idealmente de 3 colores diferentes o usar orientación y apilado para diferenciar A, B, C). Kinderbots cargados.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡De Detectives a Inventores! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Transicionar de seguir patrones a crearlos, activando la creatividad y la planificación.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda recordando cómo descubrieron patrones secretos antes.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, mis geniales agentes secretos del CODE SQUAD! ¿Recuerdan cómo hemos sido súper detectives descubriendo patrones escondidos en caminos secretos y templos perdidos? ¡Son increíbles encontrando el orden en las cosas! Pero hoy... ¡la misión cambia! ¡Hoy no vamos a descubrir... vamos a INVENTAR!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que prepararán la mente para *crear* secuencias y patrones nuevos.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Sí! ¡Hoy ustedes serán los creadores de patrones! ¡Inventarán su propio camino secreto! Para eso, necesitamos que nuestra mente esté llena de ideas brillantes y lista para organizar. ¡Vamos al Gimnasio Cerebral a despertar nuestra imaginación y nuestra habilidad para crear secuencias únicas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Reforzar la idea de secuencia y orden a través del movimiento, preparándose para crear sus propias secuencias.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, quizás preguntando "¿Qué paso creen que viene ahora?" para fomentar la predicción y creación mental.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Inventores, a bailar! Mientras seguimos la música y los pasos... ¡piensen! Si ustedes fueran los creadores de este baile, ¿qué paso pondrían después? ¿Otro giro? ¿Un salto? ¡Este baile nos ayuda a pensar en cómo ordenar los movimientos para crear algo divertido y único! ¡Música!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - El Código Secreto del Club -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🔒 Actividad 3: ¡Creando Nuestro Código Secreto! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia de la necesidad de un código secreto, introducir el reto de crear un patrón con iBricks y luego programarlo.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia: el CODE SQUAD necesita una nueva contraseña secreta para entrar a su cuartel general, ¡una contraseña hecha de bloques!</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Atención, agentes secretos! ¡El Cuartel General del CODE SQUAD necesita MÁXIMA SEGURIDAD! Para asegurarnos de que solo los verdaderos agentes Gnius puedan entrar, ¡necesitamos una nueva CONTRASEÑA SECRETA! Pero no será una palabra... ¡será un CAMINO SECRETO hecho con nuestros bloques gigantes! ¡Un patrón que solo nosotros conozcamos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: Cada equipo inventará un patrón corto (AB, ABC o más complejo según nivel) con iBricks. Luego, programarán a Kinderbot para seguir *su* patrón inventado.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Nuestra misión hoy es doblemente secreta y creativa! Primero: cada equipo inventará su propio patrón para el camino secreto usando los bloques. ¡Pueden usar colores diferentes, ponerlos parados o acostados, o apilarlos! ¡Tiene que ser un patrón que se repita un poquito! (Ej. A-B-C o A-A-B). Segundo: una vez que tengan su patrón secreto ¡lo programarán en Kinderbot! Le enseñarán a seguir los pasos exactos de SU creación. ¿Listos para ser los inventores de la nueva contraseña del CODE SQUAD?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Diseñadores de Códigos Secretos! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para colaborar en la invención del patrón y la planificación de la secuencia de programación.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que los mejores códigos secretos se crean en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Agentes diseñadores! ¡Crear un código secreto que nadie más sepa requiere de mentes brillantes trabajando juntas! ¡En equipo pueden inventar un patrón súper original y luego planear cómo enseñárselo a Kinderbot! ¡Formen sus Equipos de Diseñadores de Códigos Secretos! ¡Elijan a su compañero inventor!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a empezar a pensar y discutir qué patrón crearán con sus bloques.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Equipos de diseñadores listos? ¡Fantástico! Ahora, ¡la parte divertida! Miren sus bloques. ¿Qué patrón van a inventar? ¿Usarán dos tipos de bloques? ¿Tres? ¿Cómo los van a ordenar? ¡Hablen, dibujen si quieren, y creen el patrón más secreto y genial de todos! ¡El cuartel general confía en ustedes!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Inventando y Programando el Patrón! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⌨️ Actividad 5: ¡Dando Vida al Código Secreto! ⏰ Tiempo: 6 minutos</div>
+        <div class="subtitle">Objetivo: Crear físicamente el patrón con iBricks y luego programar la secuencia correspondiente en Kinderbot según el nivel.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+            <!-- Paso Común: Crear Patrón y Repasar Botones -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡A Crear y Recordar!". Guía para que cada pareja construya su patrón inventado con iBricks (3 a 8 bloques según nivel). Repasa botones A, GI, GD, At.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Diseñadores, a construir su patrón secreto! ¡Coloquen los bloques en fila siguiendo la idea que inventaron! (Supervisa). ¡Qué patrones tan originales! Ahora, recordemos los movimientos de Kinderbot: Adelante, Girar Izquierda, Girar Derecha, Atrás... ¡Vamos a necesitar los correctos para seguir SU patrón!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: Código Simple Creado". Patrón AB o ABC (3 bloques). Programar 3 pasos correspondientes (ej. A, G, A).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su patrón de 3 bloques es genial! Ahora, tradúzcanlo a código Kinderbot. Si pusieron Bloque A, Bloque B, Bloque C... ¿qué movimientos necesita Kinderbot? Quizás 'Adelante' (para A), 'Girar' (para mirar a B), 'Adelante' (para B). ¡Programen 3 pasos que sigan SU patrón! ¡Sin 'Go'!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                <td><strong>PASO 2 - K2 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: Código ABC Extendido". Patrón ABC repetido (6 bloques). Programar 4-6 pasos correspondientes (ej. A, G, A, G, A, G).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Diseñadores K2! ¡Su patrón de 6 bloques (como ABCABC) es muy seguro! Ahora, el código. Piensen: ¿Avanza, Gira, Avanza, Gira, Avanza, Gira? ¿O necesitan pasos diferentes? ¡Programen la secuencia de 4, 5 o 6 pasos que siga exactamente SU patrón inventado! ¡Concéntrense! ¡Sin activar 'Go'!"
+                    </div>
+                </td>
+            </tr>
+            <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: Código Complejo y Secreto". Patrón AABC o ABBC (6-8 bloques). Programar 6-8 pasos. Opcional: describir el patrón a otra pareja sin mostrarlo.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros Creadores K3! ¡Sus patrones AABC o ABBC son súper secretos! ¡Necesitarán de 6 a 8 pasos para programarlos! Piensen bien la secuencia: ¿Adelante, Adelante, Girar, Avanzar...? ¡Programen con cuidado cada paso! (Pausa). ¡Reto extra para súper espías! ¿Se atreven a DESCRIBIRLE su patrón a otra pareja, sin que lo vean, a ver si ellos pueden construirlo y programarlo? ¡Eso es comunicación de alto nivel! ¡Preparen su código principal, sin 'Go'!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Probando la Contraseña Secreta! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-codigo')">
+        <div class="title">🚀 Actividad 6: ¡Activando la Contraseña Maestra! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el código y verificar si Kinderbot sigue correctamente el patrón creado por los propios alumnos.</div>
+    </div>
+    <div id="probando-codigo" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Anima a poner a Kinderbot al inicio de su patrón creado y presionar 'Go'. Observar si sigue los 3 pasos programados. Celebrar su creación.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Pongan a Kinderbot al inicio de SU camino secreto! ¿Listos con el código de 3 pasos que inventaron? ¡Presionen 'Go'! ¡Miren! ¿Está siguiendo SU patrón? ¡SIIII! ¡Han creado una contraseña secreta y funciona! ¡Son grandes inventores!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Anima a poner a Kinderbot al inicio de su patrón creado y presionar 'Go'. Observar si sigue los 4-6 pasos programados. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Diseñadores K2! ¡Kinderbot al inicio de SU patrón extendido! ¿Listos con su código de 4 a 6 pasos? ¡Presionen 'Go'! ¡Veamos si Kinderbot obedece SU creación! ¿Sigue el camino? ¡PERFECTO! ¡Han inventado y programado un código secreto más largo! ¡Felicidades!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Anima a poner a Kinderbot al inicio de su patrón complejo y presionar 'Go'. Observar si sigue los 6-8 pasos. Si hicieron el reto extra, ver si la otra pareja lo logró. Celebrar la creación y la comunicación.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros Creadores K3! ¡Kinderbot al inicio de SU patrón súper secreto AABC o ABBC! ¿Listos con su código de 6 a 8 pasos? ¡Presionen 'Go'! ¡Miren si sigue la secuencia compleja! ¡GUAU! ¡Lo hace! ¡Su código funciona! (Si hicieron el reto de describir): ¿La otra pareja pudo construir y programar su patrón solo con sus palabras? ¡Eso es trabajo de súper espías! ¡Celebremos sus increíbles inventos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 36.5) -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Código Creado y Reflexión! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la creación de patrones y códigos, reforzar la conexión entre idea, construcción y programa.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Cierra la historia (el cuartel tiene nueva contraseña). Realiza preguntas de reflexión sobre el proceso de creación.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN DE SEGURIDAD COMPLETADA, CODE SQUAD! ¡Gracias a sus mentes creativas, el Cuartel General ahora tiene las contraseñas secretas más geniales y seguras del mundo, hechas con bloques! ¡Nadie podrá entrar sin saber SU código! Pensemos en cómo lo hicimos:
+1. ¿Qué fue lo primero que hicimos hoy? (¡Inventar/Crear nuestro propio patrón!)
+2. ¿Fue fácil o difícil decidir cómo ordenar los bloques para su patrón?
+3. ¿Les gustó transformar SU idea de patrón en un código que Kinderbot pudiera seguir?
+¡Hoy no solo siguieron instrucciones, sino que ustedes FUERON los inventores de las instrucciones! ¡Eso es ser un verdadero creador y programador! ¡Felicidades, agentes Gnius!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active');
+        } else {
+            content.style.display = "block";
+            parentActivity.classList.add('active');
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
